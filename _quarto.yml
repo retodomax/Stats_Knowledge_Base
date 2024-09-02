@@ -17,7 +17,7 @@ book:
     - index.qmd
     - part: Math Basics
       chapters: 
-        - intro.qmd
+        - 001-math-basics.qmd
     - part: Probability Theory
     - part: Bootstrap
     - part: Subject specific
