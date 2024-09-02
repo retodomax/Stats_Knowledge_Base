@@ -1,0 +1,54 @@
+project:
+  type: book
+  pre-render: shared_files/pre_render_script.R
+
+book:
+  title: "Stats Knowledge Base"
+  author: "[Reto Zihlmann](https://retodomax.github.io)"
+  date: today
+  date-format: iso
+  repo-url: https://github.com/retodomax/Stats_Knowledge_Base
+  repo-branch: main
+  repo-actions: [edit, issue]
+  favicon: "figures/00_icon/icon.png"
+  twitter-card: true
+  site-url: https://retodomax.github.io/Stats_Knowledge_Base
+  chapters:
+    - index.qmd
+    - part: Math Basics
+      chapters: 
+        - intro.qmd
+    - part: Probability Theory
+    - part: Bootstrap
+    - part: Subject specific
+
+bibliography: "shared_files/bib.bib"
+link-citations: true # not true by default for pdf
+
+format:
+  html:
+    theme:
+      - cosmo
+      - "shared_files/reto_theme.scss"
+      - "shared_files/reto_theme_book.scss"
+    shift-heading-level-by: 1
+    link-external-newwindow: true # open links in new window
+    include-before-body:
+      - "shared_files/RetoMathjax.tex"
+      - "shared_files/ggiraph_left_align.html"
+
+number-depth: 3
+execute: 
+  echo: false
+  warning: false
+  error: false
+  freeze: auto
+knitr: 
+  opts_chunk: 
+    comment: ""
+    out-width: 70%
+fig-align: left
+fig-width: 6
+fig-asp: 0.618
+lightbox: auto
+
