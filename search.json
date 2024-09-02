@@ -10,14 +10,102 @@
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
+    "objectID": "001-math-basics.html",
+    "href": "001-math-basics.html",
+    "title": "1  Math Basics",
     "section": "",
-    "text": "% Tag useful such that part is included but already hidden even before rendering of MathJax.\n\\(\n\\newcommand{\\bm}[1]{\\boldsymbol{#1}}\n% \\newcommand{\\bm}[1]{\\boldsymbol{\\mathbf{#1}}}  % Use this if you prefere upright (not italic) vectors and matrices\n\n% Operators\n\\newcommand{\\tr}{{}^{\\intercal}}               % transpose (needs amssymb)\n\\newcommand{\\inv}{^{-1}}                       % inverse\n\\renewcommand{\\d}[1]{\\operatorname{d}\\!{#1}}  % dx\n\\newcommand{\\norm}[1]{\\left\\lVert#1\\right\\rVert}           % L2 Norm\n\\DeclareMathOperator*{\\argmin}{arg\\, min}\n\\DeclareMathOperator*{\\argmax}{arg\\, max}\n\\DeclareMathOperator{\\diag}{diag}\n\n\\newcommand{\\E}{\\mathbf{E}}  % Depreciated: delete as soon as possible... Use \\ERW{}\n\n% Matrix\n\\newcommand{\\bigzero}{\\mbox{\\normalfont\\Large\\bfseries 0}}  % big zero in matrix\n\\newcommand{\\rvline}{\\hspace*{-\\arraycolsep}\\vline\\hspace*{-\\arraycolsep}} % vertical bar to separate matrix\n\n% SfS stuff\n\\newcommand{\\iid}{\\mbox{ i.i.d. }}\n\\newcommand{\\Xsub}[2]{{#1}_{\\mathrm{\\scriptscriptstyle #2}}}\n\\newcommand{\\wh}[1]{{}\\kern0.1em\\widehat{\\kern-0.1em#1}{}}\n\n\\DeclareMathOperator{\\Var}{Var}\n\\DeclareMathOperator{\\Cov}{Cov}\n\\DeclareMathOperator{\\Cor}{Corr}\n\n\\newcommand{\\ekl}{[}     % Erwartungswert Klammer links\n\\newcommand{\\ekr}{]}     % Erwartungswert Klammer rechts\n\\newcommand{\\ckl}{(}     % (Co)variance Klammer links\n\\newcommand{\\ckr}{)}\n\\newcommand{\\pkl}{(}     % Probability Klammer links\n\\newcommand{\\pkr}{)}\n\\newcommand{\\vkl}{(}     % Verteilungs Klammer links\n\\newcommand{\\vkr}{)}\n\n\\newcommand{\\ERWSymbol}{\\mathbf{E}}  % vorbereitet zum Anpassen an individuelle Styles\n\\newcommand{\\VARSymbol}{\\Var}\n\\newcommand{\\COVSymbol}{\\Cov}\n\\newcommand{\\CORSymbol}{\\Cor}\n\\DeclareMathOperator{\\PRSymbol}{P}\n\\newcommand{\\NormalSymbol}{\\mathcal{N}}\n\\DeclareMathOperator{\\BinomialSymbol}{\\mathcal{B}} % Binomial\n\\DeclareMathOperator{\\BernoulliSymbol}{\\mathcal{B}ernoulli} % Bernoulli\n\\DeclareMathOperator{\\ExponentialSymbol}{Exp}\n\\DeclareMathOperator{\\PoissonSymbol}{Pois}\n\n% die eigentlichen ``Funktionen''\n\\newcommand{\\ERW}[1] {\\ERWSymbol \\left[ #1 \\right]}\n\\newcommand{\\VAR}[1] {\\VARSymbol \\left( #1 \\right)}\n\\newcommand{\\VARH}[1]{\\wh\\VARSymbol \\left( #1 \\right)}\n\n\\newcommand{\\COV}[1] {\\COVSymbol \\left(#1 \\right)}\n\\newcommand{\\COVH}[1] {\\wh\\COVSymbol \\left( #1 \\right)}\n\\newcommand{\\COR}[1] {\\CORSymbol    \\left( #1 \\right)}\n\\newcommand{\\CORH}[1] {\\wh\\CORSymbol \\left( #1 \\right)}\n\\newcommand{\\PR}[1] {\\PRSymbol \\! \\left( #1 \\right)}\n\\newcommand{\\Normal}[1] {\\NormalSymbol   \\left( #1 \\right)}\n\\newcommand{\\Binomial}[1] {\\BinomialSymbol    \\left( #1 \\right)}\n\\newcommand{\\Bernoulli}[1] {\\BernoulliSymbol    \\left( #1 \\right)}\n\\newcommand{\\Exponential}[1] {\\ExponentialSymbol    \\left( #1 \\right)}\n\\newcommand{\\Poisson}[1] {\\PoissonSymbol   \\left( #1 \\right)}\n\n\\newcommand{\\ERWi}[2]  {\\Xsub{\\ERWSymbol}{#1}    \\left[ #2\n    \\right]}\n\\newcommand{\\VARi}[2]  {\\Xsub{\\VARSymbol}{#1}    \\left( #2\n    \\right)}\n\\newcommand{\\VARHi}[2] {\\Xsub{\\wh\\VARSymbol}{#1} \\left( #2\n    \\right)}\n\\newcommand{\\COVi}[2]  {\\Xsub{\\COVSymbol}{#1}    \\left( #2\n    \\right)}\n\\newcommand{\\COVHi}[2] {\\Xsub{\\wh\\COVSymbol}{#1} \\left( #2\n    \\right)}\n\\newcommand{\\CORi}[2]  {\\Xsub{\\CORSymbol}{#1}    \\left( #2\n    \\right)}\n\\newcommand{\\CORHi}[2] {\\Xsub{\\wh\\CORSymbol}{#1} \\left( #2\n    \\right)}\n\\newcommand{\\PRi}[2]   {\\Xsub{\\PRSymbol}{#1}     \\left( #2\n    \\right)}\n\\newcommand{\\Normali}[2]      {\\Xsub{\\NormalSymbol}{#1}   \\left( #2\n    \\right)}\n\\newcommand{\\Binomiali}[2]    {\\Xsub{\\BinomialSymbol}{#1}    \\left( #2\n    \\right)}\n\\newcommand{\\Bernoullii}[2]   {\\Xsub{\\BernoulliSymbol}{#1}    \\left( #2\n    \\right)}\n\\newcommand{\\Exponentiali}[2] {\\Xsub{\\ExponentialSymbol}{#1}    \\left( #2\n    \\right)}\n\\newcommand{\\Poissoni}[2]     {\\Xsub{\\PoissonSymbol}{#1}   \\left( #2\n    \\right)}\n\\)\n\n\n\n\n\n\n\n\nThis is a book created from markdown and executable code.\nSee (knuth84?) for additional discussion of literate programming.\n\n\n[1] 2",
+    "text": "2 Useful",
     "crumbs": [
       "Math Basics",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Math Basics</span>"
+    ]
+  },
+  {
+    "objectID": "001-math-basics.html#useful",
+    "href": "001-math-basics.html#useful",
+    "title": "1  Math Basics",
+    "section": "",
+    "text": "Wikipedia: Glossary of mathematical symbols",
+    "crumbs": [
+      "Math Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Math Basics</span>"
+    ]
+  },
+  {
+    "objectID": "001-math-basics.html#exponentiation",
+    "href": "001-math-basics.html#exponentiation",
+    "title": "1  Math Basics",
+    "section": "3 Exponentiation",
+    "text": "3 Exponentiation\nRules\n\n\\(a^m a^n = a^{m+n}\\)\n\\(\\frac{a^m}{a^n} = a^{m-n}\\)\n\\((a^m)^n = a^{mn}\\)\n\\(a^n b^n = (ab)^n\\)\n\\(\\frac{a^n}{b^n} = \\left(\\frac{a}{b}\\right)^n\\)\n\nSpecial cases\n\n\\(a^1 = a\\)\n\\(a^0 = 1, \\quad a \\neq 0\\)\n\\(aa^n = a^{n+1}\\)\n\\(1^n = 1\\)\n\\(0^n = 0, \\quad n &gt; 0\\)\n\\(a^{-n} = \\frac{1}{a^n}\\)",
+    "crumbs": [
+      "Math Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Math Basics</span>"
+    ]
+  },
+  {
+    "objectID": "001-math-basics.html#logarithm",
+    "href": "001-math-basics.html#logarithm",
+    "title": "1  Math Basics",
+    "section": "4 Logarithm",
+    "text": "4 Logarithm\n\\(y = \\log_ax \\quad \\Leftrightarrow \\quad a^y = x\\)\nRules\n\n\\(\\log(uv) = \\log u + \\log v\\)\n\\(\\log\\left(\\frac{u}{v}\\right) = \\log u - \\log v\\)\n\\(\\log\\left(\\frac{1}{v}\\right) = -\\log v\\)\n\\(\\log(u^r) = r \\log u\\)\n\nChange of base\n\\(\\log_a x = \\frac{\\log_b x}{\\log_b a}\\)",
+    "crumbs": [
+      "Math Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Math Basics</span>"
+    ]
+  },
+  {
+    "objectID": "001-math-basics.html#set-theory",
+    "href": "001-math-basics.html#set-theory",
+    "title": "1  Math Basics",
+    "section": "5 Set Theory",
+    "text": "5 Set Theory\n\n\n\nNotation\nMeaning\nExample\nLatex\n\n\n\n\nConstants\n\n\n\n\n\n\\(\\emptyset\\)\nEmpty set\n\\(|\\emptyset|=0\\)\n\\emptyset\n\n\n\\(\\mathbb{N}\\)\nNatural numbers\n\\(1 \\in \\mathbb{N}\\)\n\\mathbb{N}\n\n\n\\(\\mathbb{Z}\\)\nIntegers\nIf \\(m, n \\in \\mathbb{Z}\\), then \\(m+n, mn \\in \\mathbb{Z}\\)\n\\mathbb{Z}\n\n\n\\(\\mathbb{Q}\\)\nRational numbers\n\\(\\pi \\notin \\mathbb{Q}\\)\n\\mathbb{Q}\n\n\n\\(\\mathbb{R}\\)\nReal numbers\n\\(e \\in \\mathbb{R}\\)\n\\mathbb{R}\n\n\n\\(\\mathbb{C}\\)\nComplex numbers\n\\(\\mathbb{N} \\subseteq \\mathbb{Z} \\subseteq \\mathbb{Q} \\subseteq \\mathbb{R} \\subseteq \\mathbb{C}\\)\n\\mathbb{C}\n\n\nGeneral\n\n\n\n\n\n\\(A\\)\nSets\n\\(A   \\subseteq B \\cup C\\)\n\n\n\n\\(\\{\\}\\)\nIndicator for Sets\n\\(\\{5, e, \\pi, 1\\}\\)\n\\{ \\}\n\n\n\\(|,:\\)\nSet Builder (‘such that’)\n\\(\\{x^2: x \\in \\mathbb{Z}\\}\\), \\(\\{y \\in \\mathbb{Z} \\mid y = x^2 \\text{ for some } x \\in \\mathbb{Z}\\}\\)\n\\mid, :\n\n\nOperators\n\n\n\n\n\n\\(A^\\complement\\)\nComplement (‘not’)\n\nA^\\complement\n\n\n\\(\\cap\\)\nIntersection (‘and’)\n\\(A \\cap B\\)\n\\cap\n\n\n\\(\\cup\\)\nUnion (‘or’)\n\\(A \\cup B\\)\n\\cup\n\n\nRelation\n\n\n\n\n\n\\(\\in\\), \\(\\notin\\)\nIs (not) member of\n\\(x \\in A\\)\n\\in, \\notin\n\n\n\\(\\ni\\), \\(\\not\\ni\\)\nOwns (not)\n\\(A \\ni x\\)\n\\ni, \\notin\n\n\n\\(\\subseteq\\), \\(\\not\\subseteq\\)\nIs (not) subset of\n\\(A \\subseteq B\\)\n\\subseteq, \\not\\subseteq\n\n\n\\(\\supseteq\\), \\(\\not\\supseteq\\)\nIs (not) superset of\n\\(A \\supseteq B\\)\n\\supseteq, \\not\\supseteq\n\n\n\\(\\subset\\), \\(\\not\\subset\\)\nIs (not) proper subset of\n\\(A \\subset B\\)\n\\subset, \\not\\subset\n\n\n\\(\\supset\\), \\(\\not\\supset\\)\nIs (not) proper superset of\n\\(B \\supset A\\)\n\\supset, \\not\\supset\n\n\n\n\n\n\n\n\nVenn diagrams\n\n\n\n\nFurther\n\nLatex Wiki\nMathvault\n\nLaws of set theory\n\nCommutative Laws\n\n\\(A \\cup B = B \\cup A\\)\n\\(A \\cap B = B \\cap A\\)\n\nAssociative Laws\n\n\\((A \\cup B) \\cup C = A \\cup (B \\cup C)\\)\n\\((A \\cap B) \\cap C = A \\cap (B \\cap C)\\)\n\nDistributive Laws\n\n\\((A \\cup B) \\cap C = (A \\cap C) \\cup (B \\cap C)\\)\n\\((A \\cap B) \\cup C = (A \\cup C) \\cap (B \\cup C)\\)\n\nDe Morgan’s laws\n\n\\((A \\cap B)^\\complement = A^\\complement \\cup B^\\complement\\)\n\\((A \\cup B)^\\complement = A^\\complement \\cap B^\\complement\\)\n\n\nTerms\n\nDisjoint\n\n\\(A\\) and \\(B\\) are called disjoint if \\(A \\cap B = \\emptyset\\)",
+    "crumbs": [
+      "Math Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Math Basics</span>"
+    ]
+  },
+  {
+    "objectID": "001-math-basics.html#discrete-mathematics",
+    "href": "001-math-basics.html#discrete-mathematics",
+    "title": "1  Math Basics",
+    "section": "6 Discrete Mathematics",
+    "text": "6 Discrete Mathematics\nFactorial\n\\[\\begin{align*}\n0! &= 1\\\\\nn! &= 1 \\cdot 2 \\cdot 3 \\cdot \\ldots \\cdot (n-1) \\cdot n\n\\end{align*}\\]\nBinomial coefficient\n\\[\n{n \\choose k} = \\frac{n!}{k!(n-k)!}\n\\]",
+    "crumbs": [
+      "Math Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Math Basics</span>"
+    ]
+  },
+  {
+    "objectID": "001-math-basics.html#combinatorics",
+    "href": "001-math-basics.html#combinatorics",
+    "title": "1  Math Basics",
+    "section": "7 Combinatorics",
+    "text": "7 Combinatorics\nDraw \\(k\\) balls out of an urn with \\(n\\) balls. Number of possible samples\n\n\n\n\n\n\n\n\n\nWith replacement\nWithout replacement\n\n\n\n\nregard order\n\\(n^k\\)\n\\(n\\cdot(n-1)\\cdot(n-2)\\cdot\\ldots\\cdot(n-k+1) = \\frac{n!}{(n-k)!}\\)\n\n\ndisregard order\n\\({n+k-1 \\choose k}\\)\n\\({n \\choose k}\\)\n\n\n\n\n\\(\\Omega\\) is a set with \\(n\\) elements\n\nNumber of ways to arrange \\(k\\) elements out of \\(\\Omega\\)\n\n\\(n\\cdot(n-1)\\cdot(n-2)\\cdot\\ldots\\cdot(n-k+1) = \\frac{n!}{(n-k)!}\\)\n\nNumber of ways to arrange \\(n\\) elements\n\n\\(n!\\)\n\nNumber of combinations (subsets) of \\(\\Omega\\) with \\(k\\) elements\n\n\\({n \\choose k}\\)\n\nNumber of ways, to split \\(\\Omega\\) into \\(r\\) disjoint sets with \\(k_1, k_2, \\ldots, k_r\\) Elments (assuming \\(k_1 + k_2 + \\ldots + k_r = n\\))\n\n\\(\\frac{n!}{k_1! \\cdot k_2! \\cdot \\ldots \\cdot k_r!}\\)\n\n\n\nMore general possible cases for combinatorial problems\n\nTwelvefold Way\nSO: Implementation of permutation/combination in R",
+    "crumbs": [
+      "Math Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Math Basics</span>"
+    ]
+  },
+  {
+    "objectID": "001-math-basics.html#inequalities",
+    "href": "001-math-basics.html#inequalities",
+    "title": "1  Math Basics",
+    "section": "8 Inequalities",
+    "text": "8 Inequalities\nInequalities can be transformed by applying any monotonic transformation \\(f(x)\\) to both sides of the inequality. The inequality symbol has to be reversed if the function \\(f(x)\\) is monotonically decreasing. Details Wikipedia\n\nmonotonically increasing\n\nMultiply by positive factor\nAdd/subtract number (\\(f(x) = x + a\\))\n\\(f(x) = \\exp(x)\\), \\(f(x) = \\log(x)\\), …\n\nmonotonically decreasing\n\nMultiply by negative factor\n\\(f(x) = x^{-1}\\), …",
+    "crumbs": [
+      "Math Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Math Basics</span>"
+    ]
+  },
+  {
+    "objectID": "001-math-basics.html#optimization",
+    "href": "001-math-basics.html#optimization",
+    "title": "1  Math Basics",
+    "section": "9 Optimization",
+    "text": "9 Optimization\n\nSometimes solution can be directly calcualted\n\nClosed form solution\nNon-iterative solution\nExplicit solution\nDirect solution\nAnalytic solution\n\nOtherwise we need numerical optimization to iteratively find a solution",
+    "crumbs": [
+      "Math Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Math Basics</span>"
     ]
   }
 ]

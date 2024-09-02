@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.547">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Stats Knowledge Base - 1&nbsp; Introduction</title>
+<title>1&nbsp; Math Basics – Stats Knowledge Base</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -41,6 +41,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,8 +72,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta name="twitter:title" content="Stats Knowledge Base - 1&nbsp; Introduction">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta name="twitter:title" content="1&nbsp; Math Basics – Stats Knowledge Base">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
@@ -81,13 +113,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Math Basics</a></li><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./001-math-basics.html">Math Basics</a></li><li class="breadcrumb-item"><a href="./001-math-basics.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Math Basics</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -120,17 +152,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Math Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  <a href="./001-math-basics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Math Basics</span></span></a>
   </div>
 </li>
       </ul>
@@ -153,7 +185,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#useful" id="toc-useful" class="nav-link active" data-scroll-target="#useful"><span class="header-section-number">2</span> Useful</a></li>
+  <li><a href="#exponentiation" id="toc-exponentiation" class="nav-link" data-scroll-target="#exponentiation"><span class="header-section-number">3</span> Exponentiation</a></li>
+  <li><a href="#logarithm" id="toc-logarithm" class="nav-link" data-scroll-target="#logarithm"><span class="header-section-number">4</span> Logarithm</a></li>
+  <li><a href="#set-theory" id="toc-set-theory" class="nav-link" data-scroll-target="#set-theory"><span class="header-section-number">5</span> Set Theory</a></li>
+  <li><a href="#discrete-mathematics" id="toc-discrete-mathematics" class="nav-link" data-scroll-target="#discrete-mathematics"><span class="header-section-number">6</span> Discrete Mathematics</a></li>
+  <li><a href="#combinatorics" id="toc-combinatorics" class="nav-link" data-scroll-target="#combinatorics"><span class="header-section-number">7</span> Combinatorics</a></li>
+  <li><a href="#inequalities" id="toc-inequalities" class="nav-link" data-scroll-target="#inequalities"><span class="header-section-number">8</span> Inequalities</a></li>
+  <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization"><span class="header-section-number">9</span> Optimization</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/retodomax/Stats_Knowledge_Base/edit/main/001-math-basics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/retodomax/Stats_Knowledge_Base/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -262,9 +307,9 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Math Basics</a></li><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./001-math-basics.html">Math Basics</a></li><li class="breadcrumb-item"><a href="./001-math-basics.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Math Basics</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Math Basics</span></h1>
 </div>
 
 
@@ -281,15 +326,338 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a book created from markdown and executable code.</p>
-<p>See <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref"><strong>knuth84?</strong></a>)</span> for additional discussion of literate programming.</p>
+<section id="useful" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="useful"><span class="header-section-number">2</span> Useful</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Glossary_of_mathematical_symbols">Wikipedia: Glossary of mathematical symbols</a></li>
+</ul>
+</section>
+<section id="exponentiation" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="exponentiation"><span class="header-section-number">3</span> Exponentiation</h2>
+<p>Rules</p>
+<ul>
+<li><span class="math inline">\(a^m a^n = a^{m+n}\)</span></li>
+<li><span class="math inline">\(\frac{a^m}{a^n} = a^{m-n}\)</span></li>
+<li><span class="math inline">\((a^m)^n = a^{mn}\)</span></li>
+<li><span class="math inline">\(a^n b^n = (ab)^n\)</span></li>
+<li><span class="math inline">\(\frac{a^n}{b^n} = \left(\frac{a}{b}\right)^n\)</span></li>
+</ul>
+<p>Special cases</p>
+<ul>
+<li><span class="math inline">\(a^1 = a\)</span></li>
+<li><span class="math inline">\(a^0 = 1, \quad a \neq 0\)</span></li>
+<li><span class="math inline">\(aa^n = a^{n+1}\)</span></li>
+<li><span class="math inline">\(1^n = 1\)</span></li>
+<li><span class="math inline">\(0^n = 0, \quad n &gt; 0\)</span></li>
+<li><span class="math inline">\(a^{-n} = \frac{1}{a^n}\)</span></li>
+</ul>
+</section>
+<section id="logarithm" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="logarithm"><span class="header-section-number">4</span> Logarithm</h2>
+<p><span class="math inline">\(y = \log_ax \quad \Leftrightarrow \quad a^y = x\)</span></p>
+<p>Rules</p>
+<ul>
+<li><span class="math inline">\(\log(uv) = \log u + \log v\)</span></li>
+<li><span class="math inline">\(\log\left(\frac{u}{v}\right) = \log u - \log v\)</span></li>
+<li><span class="math inline">\(\log\left(\frac{1}{v}\right) = -\log v\)</span></li>
+<li><span class="math inline">\(\log(u^r) = r \log u\)</span></li>
+</ul>
+<p>Change of base</p>
+<p><span class="math inline">\(\log_a x = \frac{\log_b x}{\log_b a}\)</span></p>
+</section>
+<section id="set-theory" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="set-theory"><span class="header-section-number">5</span> Set Theory</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Notation</th>
+<th>Meaning</th>
+<th>Example</th>
+<th>Latex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Constants</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\emptyset\)</span></td>
+<td>Empty set</td>
+<td><span class="math inline">\(|\emptyset|=0\)</span></td>
+<td><code>\emptyset</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathbb{N}\)</span></td>
+<td>Natural numbers</td>
+<td><span class="math inline">\(1 \in \mathbb{N}\)</span></td>
+<td><code>\mathbb{N}</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbb{Z}\)</span></td>
+<td>Integers</td>
+<td>If <span class="math inline">\(m, n \in \mathbb{Z}\)</span>, then <span class="math inline">\(m+n, mn \in \mathbb{Z}\)</span></td>
+<td><code>\mathbb{Z}</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathbb{Q}\)</span></td>
+<td>Rational numbers</td>
+<td><span class="math inline">\(\pi \notin \mathbb{Q}\)</span></td>
+<td><code>\mathbb{Q}</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbb{R}\)</span></td>
+<td>Real numbers</td>
+<td><span class="math inline">\(e \in \mathbb{R}\)</span></td>
+<td><code>\mathbb{R}</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathbb{C}\)</span></td>
+<td>Complex numbers</td>
+<td><span class="math inline">\(\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R} \subseteq \mathbb{C}\)</span></td>
+<td><code>\mathbb{C}</code></td>
+</tr>
+<tr class="even">
+<td><strong>General</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A\)</span></td>
+<td>Sets</td>
+<td><span class="math inline">\(A   \subseteq B \cup C\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\{\}\)</span></td>
+<td>Indicator for Sets</td>
+<td><span class="math inline">\(\{5, e, \pi, 1\}\)</span></td>
+<td><code>\{ \}</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(|,:\)</span></td>
+<td><a href="https://en.wikipedia.org/wiki/Set-builder_notation#Sets_defined_by_a_predicate">Set Builder</a> (‘such that’)</td>
+<td><span class="math inline">\(\{x^2: x \in \mathbb{Z}\}\)</span>, <span class="math inline">\(\{y \in \mathbb{Z} \mid y = x^2 \text{ for some } x \in \mathbb{Z}\}\)</span></td>
+<td><code>\mid</code>, <code>:</code></td>
+</tr>
+<tr class="even">
+<td><strong>Operators</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A^\complement\)</span></td>
+<td>Complement (‘not’)</td>
+<td></td>
+<td><code>A^\complement</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\cap\)</span></td>
+<td>Intersection (‘and’)</td>
+<td><span class="math inline">\(A \cap B\)</span></td>
+<td><code>\cap</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\cup\)</span></td>
+<td>Union (‘or’)</td>
+<td><span class="math inline">\(A \cup B\)</span></td>
+<td><code>\cup</code></td>
+</tr>
+<tr class="even">
+<td><strong>Relation</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\in\)</span>, <span class="math inline">\(\notin\)</span></td>
+<td>Is (not) member of</td>
+<td><span class="math inline">\(x \in A\)</span></td>
+<td><code>\in</code>, <code>\notin</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\ni\)</span>, <span class="math inline">\(\not\ni\)</span></td>
+<td>Owns (not)</td>
+<td><span class="math inline">\(A \ni x\)</span></td>
+<td><code>\ni</code>, <code>\notin</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\subseteq\)</span>, <span class="math inline">\(\not\subseteq\)</span></td>
+<td>Is (not) subset of</td>
+<td><span class="math inline">\(A \subseteq B\)</span></td>
+<td><code>\subseteq</code>, <code>\not\subseteq</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\supseteq\)</span>, <span class="math inline">\(\not\supseteq\)</span></td>
+<td>Is (not) superset of</td>
+<td><span class="math inline">\(A \supseteq B\)</span></td>
+<td><code>\supseteq</code>, <code>\not\supseteq</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\subset\)</span>, <span class="math inline">\(\not\subset\)</span></td>
+<td>Is (not) proper subset of</td>
+<td><span class="math inline">\(A \subset B\)</span></td>
+<td><code>\subset</code>, <code>\not\subset</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\supset\)</span>, <span class="math inline">\(\not\supset\)</span></td>
+<td>Is (not) proper superset of</td>
+<td><span class="math inline">\(B \supset A\)</span></td>
+<td><code>\supset</code>, <code>\not\supset</code></td>
+</tr>
+</tbody>
+</table>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="figures/03_inkscape/set_theory/set_theory.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Venn diagrams"><img src="figures/03_inkscape/set_theory/set_theory.png" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="tb" alt="Venn diagrams"></a></p>
+<figcaption>Venn diagrams</figcaption>
+</figure>
 </div>
 </div>
+</div>
+<p>Further</p>
+<ul>
+<li><a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">Latex Wiki</a></li>
+<li><a href="https://mathvault.ca/hub/higher-math/math-symbols/set-theory-symbols/">Mathvault</a></li>
+</ul>
+<p>Laws of set theory</p>
+<ul>
+<li>Commutative Laws
+<ul>
+<li><span class="math inline">\(A \cup B = B \cup A\)</span></li>
+<li><span class="math inline">\(A \cap B = B \cap A\)</span></li>
+</ul></li>
+<li>Associative Laws
+<ul>
+<li><span class="math inline">\((A \cup B) \cup C = A \cup (B \cup C)\)</span></li>
+<li><span class="math inline">\((A \cap B) \cap C = A \cap (B \cap C)\)</span></li>
+</ul></li>
+<li>Distributive Laws
+<ul>
+<li><span class="math inline">\((A \cup B) \cap C = (A \cap C) \cup (B \cap C)\)</span></li>
+<li><span class="math inline">\((A \cap B) \cup C = (A \cup C) \cap (B \cup C)\)</span></li>
+</ul></li>
+<li>De Morgan’s laws
+<ul>
+<li><span class="math inline">\((A \cap B)^\complement = A^\complement \cup B^\complement\)</span></li>
+<li><span class="math inline">\((A \cup B)^\complement = A^\complement \cap B^\complement\)</span></li>
+</ul></li>
+</ul>
+<p>Terms</p>
+<ul>
+<li>Disjoint
+<ul>
+<li><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are called disjoint if <span class="math inline">\(A \cap B = \emptyset\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="discrete-mathematics" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="discrete-mathematics"><span class="header-section-number">6</span> Discrete Mathematics</h2>
+<p><strong>Factorial</strong></p>
+<p><span class="math display">\[\begin{align*}
+0! &amp;= 1\\
+n! &amp;= 1 \cdot 2 \cdot 3 \cdot \ldots \cdot (n-1) \cdot n
+\end{align*}\]</span></p>
+<p><strong>Binomial coefficient</strong></p>
+<p><span class="math display">\[
+{n \choose k} = \frac{n!}{k!(n-k)!}
+\]</span></p>
+</section>
+<section id="combinatorics" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="combinatorics"><span class="header-section-number">7</span> Combinatorics</h2>
+<p>Draw <span class="math inline">\(k\)</span> balls out of an urn with <span class="math inline">\(n\)</span> balls. Number of possible samples</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>With replacement</th>
+<th>Without replacement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>regard order</td>
+<td><span class="math inline">\(n^k\)</span></td>
+<td><span class="math inline">\(n\cdot(n-1)\cdot(n-2)\cdot\ldots\cdot(n-k+1) = \frac{n!}{(n-k)!}\)</span></td>
+</tr>
+<tr class="even">
+<td>disregard order</td>
+<td><span class="math inline">\({n+k-1 \choose k}\)</span></td>
+<td><span class="math inline">\({n \choose k}\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="math inline">\(\Omega\)</span> is a set with <span class="math inline">\(n\)</span> elements
+<ul>
+<li>Number of ways to arrange <span class="math inline">\(k\)</span> elements out of <span class="math inline">\(\Omega\)</span>
+<ul>
+<li><span class="math inline">\(n\cdot(n-1)\cdot(n-2)\cdot\ldots\cdot(n-k+1) = \frac{n!}{(n-k)!}\)</span></li>
+</ul></li>
+<li>Number of ways to arrange <span class="math inline">\(n\)</span> elements
+<ul>
+<li><span class="math inline">\(n!\)</span></li>
+</ul></li>
+<li>Number of combinations (subsets) of <span class="math inline">\(\Omega\)</span> with <span class="math inline">\(k\)</span> elements
+<ul>
+<li><span class="math inline">\({n \choose k}\)</span></li>
+</ul></li>
+<li>Number of ways, to split <span class="math inline">\(\Omega\)</span> into <span class="math inline">\(r\)</span> disjoint sets with <span class="math inline">\(k_1, k_2, \ldots, k_r\)</span> Elments (assuming <span class="math inline">\(k_1 + k_2 + \ldots + k_r = n\)</span>)
+<ul>
+<li><span class="math inline">\(\frac{n!}{k_1! \cdot k_2! \cdot \ldots \cdot k_r!}\)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>More general possible cases for combinatorial problems</p>
+<ul>
+<li><a href="https://www.johndcook.com/TwelvefoldWay.pdf">Twelvefold Way</a></li>
+<li><a href="https://stackoverflow.com/a/47983855/6152316">SO: Implementation of permutation/combination in R</a></li>
+</ul>
+</section>
+<section id="inequalities" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="inequalities"><span class="header-section-number">8</span> Inequalities</h2>
+<p>Inequalities can be transformed by applying any <strong>monotonic</strong> transformation <span class="math inline">\(f(x)\)</span> to both sides of the inequality. The inequality symbol has to be <strong>reversed</strong> if the function <span class="math inline">\(f(x)\)</span> is monotonically decreasing. Details <a href="https://en.wikipedia.org/wiki/Inequality_(mathematics)#Properties_on_the_number_line">Wikipedia</a></p>
+<ul>
+<li>monotonically increasing
+<ul>
+<li>Multiply by positive factor</li>
+<li>Add/subtract number (<span class="math inline">\(f(x) = x + a\)</span>)</li>
+<li><span class="math inline">\(f(x) = \exp(x)\)</span>, <span class="math inline">\(f(x) = \log(x)\)</span>, …</li>
+</ul></li>
+<li>monotonically decreasing
+<ul>
+<li>Multiply by negative factor</li>
+<li><span class="math inline">\(f(x) = x^{-1}\)</span>, …</li>
+</ul></li>
+</ul>
+</section>
+<section id="optimization" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="optimization"><span class="header-section-number">9</span> Optimization</h2>
+<ul>
+<li>Sometimes solution can be directly calcualted
+<ul>
+<li>Closed form solution</li>
+<li>Non-iterative solution</li>
+<li>Explicit solution</li>
+<li>Direct solution</li>
+<li>Analytic solution</li>
+</ul></li>
+<li>Otherwise we need numerical optimization to iteratively find a solution</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -327,18 +695,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -370,7 +727,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/retodomax\.github\.io\/Stats_Knowledge_Base");
@@ -378,10 +757,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
           // target, if specified
           link.setAttribute("target", "_blank");
           if (link.getAttribute("rel") === null) {
@@ -423,7 +807,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -699,7 +1087,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link  aria-label=" preface"="">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
@@ -707,8 +1095,40 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/retodomax/Stats_Knowledge_Base/edit/main/001-math-basics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/retodomax/Stats_Knowledge_Base/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/retodomax/Stats_Knowledge_Base/edit/main/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/retodomax/Stats_Knowledge_Base/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>
